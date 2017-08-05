@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
     ngOnInit() {
       this.currentImage = "http://via.placeholder.com/300x200";
       firebase.initializeApp({
-        apiKey: "AIzaSyDvl6DFU3KomLIfLy3GKdYXVmQlbGlkggY",
-        authDomain: "youradventure-ebeeb.firebaseapp.com"
+        apiKey: "****************************",
+        authDomain: "*************************************"
       });
 
   }

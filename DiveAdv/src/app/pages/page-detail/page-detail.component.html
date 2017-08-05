@@ -1,0 +1,22 @@
+  <div>
+    <p id="pageTextContainer">
+      {{currentPage.pageText}}
+    </p>
+    <hr>
+    <div *ngFor="let choice of currentPage.choices">
+      <div *ngIf="choice.choice != null">
+          <button class="btn btn-success btn-block" (click)="onGoToPage(choice.page)">
+              {{choice.choice}}
+        </button>
+      </div>
+      <br />
+    </div>
+    <hr />
+    <ng-template [ngIf]="isAuthenticated()">
+      <button class="btn btn-primary btn-sm" (click)="onNewPage()">New Page</button>
+      <button class="btn btn-warning btn-sm" (click)="onEditPage()">Edit Page</button>
+      <hr>
+      <button class="btn btn-danger btn-sm" (click)="onDeletePage()">Delete Page</button>
+    </ng-template>
+
+  </div>

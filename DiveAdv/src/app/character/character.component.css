@@ -1,0 +1,13 @@
+#characterContainer {
+  background-image: url('../../assets/images/tim-arterbury-126157-Notebook.jpg');
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+  margin-top: 1em;
+  padding: 4em 2em 1em 5em;
+  border: 5px solid #b3ccbf;
+}
+
+
+
+

@@ -1,0 +1,8 @@
+
+- Typing page number in url goes there.
+- Keep user logged in for entire session.
+- Related to above, get auth-guard working on routes.
+- Return to last visited page after loggin in.
+- Add delete page warning
+- Add interactive character sheet that updates with story occurrences.
+- Add tinymce to textarea

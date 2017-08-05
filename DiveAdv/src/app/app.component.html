@@ -1,0 +1,30 @@
+<div id="background">
+  <app-header></app-header>
+  <div class="row">
+    <div class="container">
+      <div class="col-sm-6 col-md-4" id="sidebarContainer">
+        <img [src]="currentImage" class="img img-responsive">
+        <div class="hidden-xs visible-sm visible-md visible-lg">
+          <app-character></app-character>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-8">
+        <!--<<app-page></app-page>>-->
+        <router-outlet></router-outlet>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!--<div class="col-sm-6 col-md-4">
+    <app-character></app-character>
+  </div>
+</div>-->
+
+
+

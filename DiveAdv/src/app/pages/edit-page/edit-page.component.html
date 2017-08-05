@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="editPageForm" (ngSubmit)="onSubmit()">
+        <!-- Submit / Cancel button -->
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!editPageForm.valid">Save
+            </button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+          </div>
+        </div>
+        <!-- End submit / cancel buttons-->
+        <div class="form-group">
+          <label for="pageNumber">Page Number</label>
+          <input
+            type="text"
+            id="pageNumber"
+            formControlName="pageNumber"
+            class="form-control"
+          >
+          <span
+            *ngIf="!editPageForm.get('pageNumber').valid && editPageForm.get('pageNumber').touched"
+            class="help-block">
+          Page number is required.
+          </span>
+        </div><!-- End pageNumber form-group -->
+
+        <div class="form-group">
+          <label for="imagePath">Link or Path to Image</label>
+          <input
+            type="text"
+            id="imagePath"
+            formControlName="imagePath"
+            class="form-control"
+            #imagePath
+          >
+          <span
+            *ngIf="!editPageForm.get('imagePath').valid && editPageForm.get('imagePath').touched"
+            class="help-block">
+          A link to an image is required.
+          </span>
+          <div class="row">
+            <div class="col-xs-12">
+              <br>
+              <img [src]="imagePath.value" class="img-responsive">
+            </div>
+          </div>
+        </div> <!-- End imagePath form-group -->
+
+        <div class="form-group">
+          <label for="pageText">Page Text</label>
+          <textarea
+            type="text"
+            id="pageText"
+            formControlName="pageText"
+            class="form-control"
+            rows="7"
+          ></textarea>
+          <span
+            *ngIf="!editPageForm.get('pageText').valid && editPageForm.get('pageText').touched"
+            class="help-block">
+          Page text is required.
+          </span>
+        </div> <!-- End pageText input -->
+
+        <div formArrayName="choices">
+
+        <!-- Add CHOICES -->
+
+
+          <button
+            class="btn btn-success"
+            type="button"
+            (click)="onAddChoice()">Add Choice</button>
+          <!-- Add additonal choices per button click by creating a new form group
+            on each button click that contains choice text and page number.-->
+          <div class="row"
+            *ngFor="let choiceControl of getControls(); let i = index"
+              [formGroupName]="i"
+              style="margin-top: 10px;">
+            <div class="col-xs-10">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="choice"
+                placeholder="Choice">
+            </div>
+            <div class="col-xs-2">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="page"
+                placeholder="Page">
+            </div>
+
+
+
+
+
+          </div> <!-- End row -->
+        </div> <!-- End Choices formArray container -->
+
+      </form> <!-- End form -->
+    </div>
+  </div>
+</div>

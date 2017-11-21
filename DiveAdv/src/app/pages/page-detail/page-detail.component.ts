@@ -35,7 +35,7 @@ export class PageDetailComponent implements OnInit {
     this.route.params
       .subscribe(
         (params: Params) => {
-;
+
           // 1. Store id from url in above variable.
           // Needs a + because params returns a string, even though id is a number
           console.log(params);

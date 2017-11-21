@@ -16,7 +16,7 @@ export class PageService {
   // Used in set pages below
   pagesChanged = new Subject<Page[]>();
 
-  private pages: Page[] = []
+  public pages: Page[] = []
   //   new Page(
   //     0,
   //     "",

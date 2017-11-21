@@ -1,9 +1,9 @@
   <div>
     <p id="pageTextContainer">
-      {{currentPage.pageText}}
+      {{currentPage?.pageText}}
     </p>
     <hr>
-    <div *ngFor="let choice of currentPage.choices">
+    <div *ngFor="let choice of currentPage?.choices">
       <div *ngIf="choice.choice != null">
           <button class="btn btn-success btn-block" (click)="onGoToPage(choice.page)">
               {{choice.choice}}

@@ -15,14 +15,16 @@ export class AppComponent implements OnInit {
 
   constructor(private myPageService: PageService,
               private dataStorageService: DataStorageService) {
+
+  }
+
+    ngOnInit() {
     // Get and set image when page changes.
     this.myPageService.currentPageChanged.subscribe(
       (currentPageNumber: number) => this.currentImage =
         this.myPageService.getPage(currentPageNumber).imagePath
-    )
-  }
+    );
 
-    ngOnInit() {
       this.currentImage = "http://via.placeholder.com/300x200";
       firebase.initializeApp({
         apiKey: "AIzaSyDvl6DFU3KomLIfLy3GKdYXVmQlbGlkggY",

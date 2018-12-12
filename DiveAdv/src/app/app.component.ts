@@ -24,8 +24,9 @@ export class AppComponent implements OnInit {
       (currentPageNumber: number) => this.currentImage =
         this.myPageService.getPage(currentPageNumber).imagePath
     );
-
+  
       this.currentImage = "http://via.placeholder.com/300x200";
+      // TODO: Move this into ENV for live version.
       firebase.initializeApp({
         apiKey: "****************************",
         authDomain: "*************************************"
